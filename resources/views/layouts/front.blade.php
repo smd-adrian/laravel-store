@@ -33,7 +33,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <li>
+                            <a href="{{ route('front.products.index') }}" class="nav-link px-2 link-secondary">Productos</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link px-2 link-secondary">Overview</a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
