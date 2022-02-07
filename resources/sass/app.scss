@@ -1,8 +1,34 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
+
+// icons
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css");
 
 // Variables
-@import 'variables';
+@import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+a {
+    color: rgba(0, 0, 0, 0.9);
+    &:hover {
+        color: rgba(0, 0, 0, 0.9);
+        font-weight: bold;
+    }
+    &:focus {
+        color: rgba(0, 0, 0, 0.9);
+    }
+}
+
+i {
+    font-size: 22px;
+}
+
+.navbar-nav {
+    .car-count {
+        i {
+            margin-right: 3px;
+        }
+    }
+}

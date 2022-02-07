@@ -41,8 +41,17 @@
                         </li>
                     </ul>
 
+                    <div class="navbar-nav ms-auto">
+                        <a class="car-count" href="{{ route('front.cart.index') }}" title="Cesta de productos">
+                            <i class="bi bi-cart3"></i>
+                            <span class="badge bg-primary rounded-pill">
+                                {{ (session('cart')) ? count(session('cart')) : 0 }}
+                            </span>
+                        </a>
+                      </div>
+
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
+                    {{-- <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -75,7 +84,7 @@
                                 </div>
                             </li>
                         @endguest
-                    </ul>
+                    </ul> --}}
                 </div>
             </div>
         </nav>
