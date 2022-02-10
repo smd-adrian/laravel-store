@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AddToCarRequest extends FormRequest
+class StoreOrderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,9 @@ class AddToCarRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => ['required', 'exist:products', 'integer']
+            'customer_name' => 'required|string|max:80',
+            'customer_email' => 'required|email:rfc,dns|max:120',
+            'customer_mobile' => 'required|string|max:40',
         ];
     }
 }

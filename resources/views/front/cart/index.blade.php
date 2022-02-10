@@ -45,12 +45,12 @@
 
                 <tfoot>
                     <tr>
-                        <td colspan="5" class="text-right"><h3><strong>Total ${{ $total }}</strong></h3></td>
+                        <td colspan="5" class="text-right"><h3><strong>Total ${{ number_format($total, 0, ",", "."); }}</strong></h3></td>
                     </tr>
                     <tr>
                         <td colspan="5" class="text-right">
                             <a href="{{ route('front.products.index') }}" class="btn btn-warning">Ver productos</a>
-                            <a href="{{ route('front.cart.checkout') }}" class="btn btn-success">Continuar</a>
+                            <a href="{{ route('front.order.create') }}" class="btn btn-success">Continuar</a>
                         </td>
                     </tr>
                 </tfoot>

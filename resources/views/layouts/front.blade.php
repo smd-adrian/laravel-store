@@ -37,7 +37,7 @@
                             <a href="{{ route('front.products.index') }}" class="nav-link px-2 link-secondary">Productos</a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link px-2 link-secondary">Overview</a>
+                            <a href="{{ route('front.orders.index') }}" class="nav-link px-2 link-secondary">Historial</a>
                         </li>
                     </ul>
 

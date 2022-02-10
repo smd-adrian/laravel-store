@@ -123,6 +123,17 @@ return [
 
     'cipher' => 'AES-256-CBC',
 
+
+    /**
+     * Place to pay by evertec
+     */
+    
+    'evertec' => [
+        'login' => env('EVERTEC_LOGIN'),
+        'trankey' => env('EVERTEC_TRANKEY'),
+        'base_url' => env('EVERTEC_SERVICE_URL'),
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Autoloaded Service Providers
@@ -174,6 +185,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\EvertecServiceProvider::class
 
     ],
 

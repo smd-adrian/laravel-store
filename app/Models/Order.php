@@ -2,11 +2,10 @@
 
 namespace App\Models;
 
-use App\Models\Order;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Product extends Model
+class Order extends Model
 {
     use HasFactory;
 
@@ -16,17 +15,20 @@ class Product extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'title',
-        'description',
-        'price',
-        'photo'
+        'customer_name',
+        'customer_email',
+        'customer_mobile',
+        'status',
+        'request_id',
+        'total',
+        'token'
     ];
 
     /**
-     * The orders that belong to the product.
+     * The products that belong to the order.
      */
-    public function orders()
+    public function products()
     {
-        return $this->belongsToMany(Order::class);
+        return $this->belongsToMany(Product::class);
     }
 }

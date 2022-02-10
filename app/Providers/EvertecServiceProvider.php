@@ -2,28 +2,30 @@
 
 namespace App\Providers;
 
-use Illuminate\Pagination\Paginator;
+use App\Evertec\Evertec;
 use Illuminate\Support\ServiceProvider;
 
-class AppServiceProvider extends ServiceProvider
+class EvertecServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Register services.
      *
      * @return void
      */
     public function register()
     {
-        //
+        $this->app->bind(Evertec::class, function(){
+            return new Evertec();
+        });
     }
 
     /**
-     * Bootstrap any application services.
+     * Bootstrap services.
      *
      * @return void
      */
     public function boot()
     {
-        Paginator::useBootstrap();
+        //
     }
 }

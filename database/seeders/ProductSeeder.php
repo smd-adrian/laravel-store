@@ -18,7 +18,7 @@ class ProductSeeder extends Seeder
             'title' => 'Gorra deportiva',
             'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec accumsan dui.',
             'photo' => 'gorra-deportiva.jpg',
-            'price' => '2500'
+            'price' => '20500'
         ]);
     }
 }

@@ -8,10 +8,12 @@
 
     @include('front.alerts.warning')
 
+    @include('front.alerts.error')
+
     <div class="row mt-4">
         <div class="col-12 col-md-12 col-lg-6">
             <h4>Datos personales</h4>
-            <form action="{{ route('front.cart.checkout') }}" method="post">
+            <form action="{{ route('front.order.store') }}" method="post">
 
                 @csrf
 
@@ -22,7 +24,7 @@
                         <input type="text" class="form-control" name="customer_name" id="full_name" placeholder="Nombre completo" value="{{ old('customer_name') }}" autofocus>
 
                         @error('customer_name')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback d-block" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -33,7 +35,7 @@
                         <input type="email" class="form-control" name="customer_email" id="email" placeholder="Correo electrónico" value="{{ old('customer_email') }}">
 
                         @error('customer_email')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback d-block" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -45,7 +47,7 @@
                         <input type="phone" class="form-control" name="customer_mobile" id="phone" placeholder="Celular" value="{{ old('customer_mobile') }}">
                         
                         @error('customer_mobile')
-                            <span class="invalid-feedback" role="alert">
+                            <span class="invalid-feedback d-block" role="alert">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
@@ -88,7 +90,7 @@
 
                 <tfoot>
                     <tr>
-                        <td colspan="5" align="right"><h3><strong>Total ${{ $total }}</strong></h3></td>
+                        <td colspan="5" align="right"><h3><strong>Total ${{ number_format($total, 0, ",", "."); }}</strong></h3></td>
                     </tr>
                 </tfoot>
                 

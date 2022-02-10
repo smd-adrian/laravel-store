@@ -20,8 +20,9 @@ class CartController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
+     * Add product to shopping cart
+     * 
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function addToCart($id)
@@ -47,7 +48,7 @@ class CartController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Remove product from shopping cart
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
@@ -63,23 +64,6 @@ class CartController extends Controller
         }
 
         return redirect()->back()->with('success', '¡Producto retirado con éxito!');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function checkout()
-    {
-        $cart_products = session('cart');
-        
-        if(!isset($cart_products)){
-            return redirect()->route('front.cart.index')->with('warning', '¡Sin productos para procesar!');
-        }
-
-        return view('front.cart.checkout', ['cart_products' => $cart_products]);
     }
 
 }
