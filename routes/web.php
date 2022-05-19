@@ -35,5 +35,5 @@ Route::post('/orden/guardar', [OrderController::class, 'store'])->name('front.or
 Route::get('/orden/confirmar/{token}', [OrderController::class, 'confirmOrder'])->name('front.order.index');
 Route::get('/orden/reintentar-pago/{id}', [OrderController::class, 'retryPayment'])->name('front.order.retry');
 
-// Admin routes
+// Admin routes // ----
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
