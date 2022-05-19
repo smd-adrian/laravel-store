@@ -37,4 +37,3 @@ Route::get('/orden/reintentar-pago/{id}', [OrderController::class, 'retryPayment
 
 // Admin routes
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
